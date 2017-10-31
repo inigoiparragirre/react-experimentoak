@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import Button from './Button';
+import ButtonCounter from './ButtonCounter';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.handleClick.bind(this)
+  }
+  handleClick() {
+    console.log('Klik egin duzu');
+  }
   render() {
     return (
       <div className="App">
@@ -14,7 +22,11 @@ class App extends Component {
         <p className="App-intro">
           Hasteko, editatu <code>src/App.js</code> eta gorde birkargatzeko.
         </p>
-        <Button text='kaixo mundua'/>
+        <Button onClick={this.handleClick} text='kaixoooo mundua'/>
+        <p>
+          Kontatzailea: ButtonCounter klasea
+        </p>
+        <ButtonCounter />
       </div>
     );
   }
